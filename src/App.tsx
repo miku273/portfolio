@@ -1,4 +1,5 @@
-const asset = (name: string) => `${import.meta.env.BASE_URL}assets/${name}`;
+const asset = (name: string) =>
+  `${import.meta.env.BASE_URL}assets/${name}?v=20261121`;
 
 const assets = {
   hero: asset("ad124.png"),

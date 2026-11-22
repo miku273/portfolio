@@ -124,6 +124,14 @@
   line-height: 1.2;
   text-shadow: 0 0.8333vw 0.2778vw rgba(0, 0, 0, 0.25);
   white-space: nowrap;
+  transition:
+    text-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.portfolio-title:hover {
+  transform: translateY(-0.25%);
+  text-shadow: 0 1vw 0.45vw rgba(0, 0, 0, 0.32);
 }
 
 .title-outline,
@@ -149,6 +157,14 @@
   font-size: 3.8194vw;
   line-height: 1;
   white-space: nowrap;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.name-tag:hover {
+  transform: scale(1.04) rotate(-1deg);
+  box-shadow: 0 0.5vw 1.2vw rgba(0, 0, 0, 0.18);
 }
 
 .name-tag::before {
@@ -194,6 +210,15 @@
 
 .paper-card {
   position: absolute;
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
+}
+
+.paper-card:hover {
+  z-index: 4;
+  transform: translateY(-0.5%) rotate(-0.25deg);
+  filter: drop-shadow(0 0.6vw 0.8vw rgba(15, 29, 72, 0.16));
 }
 
 .paper-card > img {
@@ -297,6 +322,17 @@
   content: "-";
 }
 
+.skills-list li {
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.skills-list li:hover {
+  color: #087caa;
+  transform: translateX(0.35em);
+}
+
 .work-art {
   inset: -0.75% -1.4%;
   width: 101.4%;
@@ -336,6 +372,17 @@
   height: 58%;
   object-fit: cover;
   box-shadow: 0 1.2vw 3vw rgba(15, 29, 72, 0.18);
+  transition:
+    transform 220ms ease,
+    filter 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.store-preview:hover,
+.library-preview:hover {
+  transform: scale(1.025);
+  filter: saturate(1.08);
+  box-shadow: 0 1.6vw 3.5vw rgba(15, 29, 72, 0.28);
 }
 
 .paper-note {
@@ -348,6 +395,9 @@
   font-size: 2.6vw;
   line-height: 1.05;
   text-decoration: none;
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
 }
 
 .paper-note img {
@@ -376,6 +426,7 @@
   color: #00a8ce;
   text-decoration: underline;
   text-underline-offset: 0.18em;
+  transform: translateY(-3%) rotate(-1deg);
 }
 
 .library-preview {
@@ -386,6 +437,10 @@
   height: 52.9%;
   object-fit: cover;
   box-shadow: 0 1.2vw 3vw rgba(15, 29, 72, 0.18);
+  transition:
+    transform 220ms ease,
+    filter 220ms ease,
+    box-shadow 220ms ease;
 }
 
 .library-note {
@@ -461,6 +516,10 @@
 .contact-details a {
   color: inherit;
   text-decoration: none;
+  transition:
+    color 160ms ease,
+    transform 160ms ease,
+    text-shadow 160ms ease;
 }
 
 .contact-details a:hover,
@@ -468,6 +527,23 @@
   color: #2f487e;
   text-decoration: underline;
   text-underline-offset: 0.2em;
+  text-shadow: 0 0.15em 0.5em rgba(47, 72, 126, 0.18);
+  transform: translateX(-0.2em);
+}
+
+.contact-details a:focus-visible,
+.store-link:focus-visible {
+  outline: 0.12em solid currentColor;
+  outline-offset: 0.16em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @media (min-width: 1440px) {
